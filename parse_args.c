@@ -3,12 +3,13 @@
 
 void parse_args(int argc, char **argv, t_stack **a)
 {
-	int	i;
-	i = 1;
-	char **res;
+	char 	**res;
 	t_stack *tmp;
 	t_stack *new;
-	int	ss;
+	int		ss;
+	int		i;
+	
+	i = 1;
 	tmp = NULL;
 
 	while (i < argc)
@@ -24,9 +25,10 @@ void parse_args(int argc, char **argv, t_stack **a)
 				tmp = *a;
 			}
 			else
+			{
 				new =ft_stack_new(ss, ft_stack_last(*a));
-			ft_stack_add_back(a,new);
-			
+				ft_stack_add_back(a,new);
+			}
 			j++;
 		}
 		j=0;
@@ -36,6 +38,7 @@ void parse_args(int argc, char **argv, t_stack **a)
 			res[j]=NULL;
 			j++;
 		}
+		free(res);
 		i++;
 	}
 	*a= tmp;

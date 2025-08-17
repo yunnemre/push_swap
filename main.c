@@ -12,12 +12,19 @@ int main(int argc, char **argv)
 	//else if (argc == 2)
 	parse_args(argc, argv, &stack_a);
 	
-	while (stack_a->next != NULL)
+	while (stack_a)
 	{
 		printf("index:%d , value : %d \n" ,stack_a->index,stack_a->value);
-		stack_a = stack_a->next;
-		free(stack_a->prev);
+		if (stack_a->next ==NULL)
+		{
+			free(stack_a);
+			break;
+		}
+		else
+		{
+			stack_a = stack_a->next;
+			free(stack_a->prev);
+		}
 	}
-	
 	return(0);
 }

@@ -2,7 +2,9 @@ CC      = cc
 CFLAGS  = -Wall -Wextra -Werror
 RM      = rm -rf
 
-SRCS    = main.c
+SRCS    = main.c \
+		  parse_args.c \
+		  stack_manager.c \
 
 OBJS    = $(SRCS:.c=.o)
 

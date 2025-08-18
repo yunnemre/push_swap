@@ -1,14 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   stack_manager.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ydinler <ydinler@student.42istanbul.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/08/18 14:50:13 by ydinler           #+#    #+#             */
+/*   Updated: 2025/08/18 16:39:47 by ydinler          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
-// add_front add_back fonksiyonalrı delone fonksiyonu amybe size or last
-// liste bası iicn kontrol eklememli miiym 
 
 t_stack	*ft_stack_new(int value, t_stack *prev)
 {
-	t_stack *node;
-	
+	t_stack	*node;
+
 	node = (t_stack *)malloc(sizeof(t_stack));
 	if (!node)
-		return NULL;
+		return (NULL);
 	node->value = value;
 	if (prev != NULL)
 		node->index = prev->index + 1;
@@ -19,28 +29,31 @@ t_stack	*ft_stack_new(int value, t_stack *prev)
 	return (node);
 }
 
-void	ft_stack_add_back(t_stack **lst, t_stack *new)
+void	ft_stack_add_back(t_stack **stack, t_stack *new)
 {
 	t_stack	*temp;
 
-	temp = *lst;
-	if (*lst == NULL)
+	temp = *stack;
+	if (*stack == NULL)
 	{
-		*lst = new;
+		*stack = new;
 		return ;
 	}
-	while ((*lst)->next != NULL)
+	while ((*stack)->next != NULL)
 	{
-		*lst = (*lst)->next;
+		*stack = (*stack)->next;
 	}
-	(*lst)->next = new;
-	*lst = temp;
+	(*stack)->next = new;
+	*stack = temp;
 }
 
-void	ft_stack_add_front(t_stack **lst, t_stack *new)
+void	ft_stack_add_front(t_stack **stack, t_stack *new)
 {
-	new->next = *lst;
-	*lst = new;
+	if (*stack != NULL)
+		(*stack)->prev = new;
+	new->prev = NULL;
+	new->next = *stack;
+	*stack = new;
 }
 
 t_stack	*ft_stack_last(t_stack *stc)
@@ -52,4 +65,18 @@ t_stack	*ft_stack_last(t_stack *stc)
 		stc = stc->next;
 	}
 	return (stc);
+}
+
+void	ft_stack_clear(t_stack **stack)
+{
+	t_stack	*tmp;
+
+	while (*stack)
+	{
+		tmp = (*stack)->next;
+		free(*stack);
+		*stack = tmp;
+	}
+	free(*stack);
+	*stack = NULL;
 }

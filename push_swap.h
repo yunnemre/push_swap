@@ -6,7 +6,7 @@
 /*   By: ydinler <ydinler@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/18 14:50:19 by ydinler           #+#    #+#             */
-/*   Updated: 2025/08/18 15:46:24 by ydinler          ###   ########.fr       */
+/*   Updated: 2025/08/20 02:23:12 by ydinler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,7 @@ void	parse_args(int argc, char **argv, t_stack **a);
 t_stack	*ft_stack_last(t_stack *stc);
 void	ft_del_res(char **res);
 int		ft_create_stack(char **res, t_stack	**tmp, t_stack **a);
-
+void	assign_index(t_stack *stack_a);
+void	ft_bubble_sort(int *arr, int arry_size);
+void	swap(int *arr, int i, int j);
 #endif

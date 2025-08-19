@@ -5,6 +5,7 @@ RM      = rm -rf
 SRCS    = main.c \
 		  parse_args.c \
 		  stack_manager.c \
+		  assign_index.c \
 
 OBJS    = $(SRCS:.c=.o)
 

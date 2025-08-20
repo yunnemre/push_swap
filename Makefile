@@ -6,6 +6,10 @@ SRCS    = main.c \
 		  parse_args.c \
 		  stack_manager.c \
 		  assign_index.c \
+		  ft_error_man.c \
+		  ft_atoi_v2.c \
+		  ft_moves_push.c \
+		  ft_moves_swap.c \
 
 OBJS    = $(SRCS:.c=.o)
 

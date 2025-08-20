@@ -6,7 +6,7 @@
 /*   By: ydinler <ydinler@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/18 14:50:13 by ydinler           #+#    #+#             */
-/*   Updated: 2025/08/18 16:39:47 by ydinler          ###   ########.fr       */
+/*   Updated: 2025/08/20 18:12:18 by ydinler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,7 @@ t_stack	*ft_stack_new(int value, t_stack *prev)
 	if (!node)
 		return (NULL);
 	node->value = value;
-	if (prev != NULL)
-		node->index = prev->index + 1;
-	else
-		node->index = 1;
+	node->index = 0;
 	node->prev = prev;
 	node->next = NULL;
 	return (node);
@@ -77,6 +74,4 @@ void	ft_stack_clear(t_stack **stack)
 		free(*stack);
 		*stack = tmp;
 	}
-	free(*stack);
-	*stack = NULL;
 }

@@ -1,2 +1,5 @@
 a.out
 push_swap
+.vscode/*
+ft_moves_rotate.c
+ft_moves_rev_rotate.c

@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_error_man.c                                     :+:      :+:    :+:   */
+/*   ft_moves_rotate.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ydinler <ydinler@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/20 18:41:20 by ydinler           #+#    #+#             */
-/*   Updated: 2025/08/21 22:02:23 by ydinler          ###   ########.fr       */
+/*   Created: 2025/08/21 22:39:08 by ydinler           #+#    #+#             */
+/*   Updated: 2025/08/22 01:52:49 by ydinler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_error_man(t_stack **stack_a, t_stack **stack_b)
+int	rotate_man(t_stack **stack)
 {
-	if (stack_a && *stack_a)
-		ft_stack_clear(stack_a);
-	if (stack_b && *stack_b)
-		ft_stack_clear(stack_b);
-	write(2, "Error\n", 6);
-	exit(1);
+	t_stack	*tmp;
+	t_stack	*last;
+
+	if (ft_stack_size(stack) <= 1)
+	{
+		/* code */
+	}
+	
 }

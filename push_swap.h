@@ -6,7 +6,7 @@
 /*   By: ydinler <ydinler@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/18 14:50:19 by ydinler           #+#    #+#             */
-/*   Updated: 2025/08/21 01:34:09 by ydinler          ###   ########.fr       */
+/*   Updated: 2025/08/21 21:27:08 by ydinler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ typedef struct s_stack
 	struct s_stack	*prev;
 }	t_stack;
 
+/*STACK*/
 t_stack	*ft_stack_new(int value, t_stack *prev);
 void	ft_stack_add_back(t_stack **lst, t_stack *new);
 void	ft_stack_add_front(t_stack **lst, t_stack *new);
@@ -37,6 +38,7 @@ void	ft_del_res(char **res);
 int		ft_create_stack(char **res, t_stack **a);
 void	assign_index(t_stack *stack_a);
 void	ft_bubble_sort(int *arr, int arry_size);
+int		ft_stack_size(t_stack *stack);
 void	swap(int *arr, int i, int j);
 int		ft_atoi_v2(const char *nptr, int *out);
 void	ft_error_man(t_stack **stack_a, t_stack **stack_b);
@@ -47,4 +49,7 @@ int		swap_man(t_stack *stack);
 int		sa(t_stack *stack_a, int ptsd);
 int		sb(t_stack *stack_b, int ptsd);
 void	ss(t_stack *stack_a, t_stack *stack_b, int ptsd);
+
+void	pa(t_stack **stack_a, t_stack **stack_b);
+void	pb(t_stack **stack_a, t_stack **stack_b);
 #endif

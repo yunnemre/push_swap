@@ -6,7 +6,7 @@
 /*   By: ydinler <ydinler@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/18 14:49:59 by ydinler           #+#    #+#             */
-/*   Updated: 2025/08/20 19:05:36 by ydinler          ###   ########.fr       */
+/*   Updated: 2025/08/22 21:53:03 by ydinler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ void	parse_args(int argc, char **argv, t_stack **stack_a)
 		res = ft_split(argv[i], ' ');
 		if (!res)
 			ft_error_man(stack_a, NULL);
-		if (ft_create_stack(res, stack_a))
+		if (ft_create_stack(res, stack_a) || !*res)
 		{
 			ft_del_res(res);
 			ft_error_man(stack_a, NULL);

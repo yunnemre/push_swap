@@ -6,7 +6,7 @@
 /*   By: ydinler <ydinler@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/18 14:50:13 by ydinler           #+#    #+#             */
-/*   Updated: 2025/08/20 18:12:18 by ydinler          ###   ########.fr       */
+/*   Updated: 2025/08/22 21:46:13 by ydinler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ void	ft_stack_add_back(t_stack **stack, t_stack *new)
 		*stack = (*stack)->next;
 	}
 	(*stack)->next = new;
+	new->prev = *stack;
 	*stack = temp;
 }
 

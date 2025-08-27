@@ -6,7 +6,7 @@
 /*   By: ydinler <ydinler@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/18 14:50:19 by ydinler           #+#    #+#             */
-/*   Updated: 2025/08/21 21:27:08 by ydinler          ###   ########.fr       */
+/*   Updated: 2025/08/26 20:02:15 by ydinler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,10 +46,30 @@ int		ft_dup_checks(t_stack *stack_a, int value);
 
 /*MOVES*/
 int		swap_man(t_stack *stack);
-int		sa(t_stack *stack_a, int ptsd);
-int		sb(t_stack *stack_b, int ptsd);
+void	sa(t_stack *stack_a, int ptsd);
+void	sb(t_stack *stack_b, int ptsd);
 void	ss(t_stack *stack_a, t_stack *stack_b, int ptsd);
 
 void	pa(t_stack **stack_a, t_stack **stack_b);
 void	pb(t_stack **stack_a, t_stack **stack_b);
+
+int		rotate_man(t_stack **stack);
+void	ra(t_stack **stack_a, int ptsd);
+void	rb(t_stack **stack_b, int ptsd);
+void	rr(t_stack **stack_a, t_stack **stack_b, int ptsd);
+
+int		rev_rotate_man(t_stack **stack);
+void	rra(t_stack **stack_a, int ptsd);
+void	rrb(t_stack **stack_b, int ptsd);
+void	rrr(t_stack **stack_a, t_stack **stack_b, int ptsd);
+
+int		ft_is_sorted(t_stack *stack);
+
+void	ft_bubble(t_stack **stack_a, t_stack **stack_b, int raunt);
+void	ft_check_bigger(t_stack **stack_a, t_stack **stack_b);
+void	ft_sort_b(t_stack **stack_b);
+
+int		check_bit(int	value, int raunt);
+void	ft_return_b(t_stack **stack_a, t_stack **stack_b);
+void	ft_radix(t_stack **stack_a, t_stack **stack_b);
 #endif

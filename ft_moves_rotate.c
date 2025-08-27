@@ -11,15 +11,47 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include "libft/libft.h"
 
 int	rotate_man(t_stack **stack)
 {
 	t_stack	*tmp;
-	t_stack	*last;
 
-	if (ft_stack_size(stack) <= 1)
-	{
-		/* code */
-	}
-	
+	if (ft_stack_size(*stack) <= 1)
+		return (0);
+	tmp = *stack;
+	*stack = (*stack)->next;
+	tmp->next = NULL;
+	(*stack)->prev = NULL;
+	ft_stack_add_back(stack, tmp);
+	return (1);
+}
+
+void	ra(t_stack **stack_a, int ptsd)
+{
+	int	res;
+
+	res = rotate_man(stack_a);
+	if (ptsd && res)
+		ft_printf("ra\n");
+}
+
+void	rb(t_stack **stack_b, int ptsd)
+{
+	int	res;
+
+	res = rotate_man(stack_b);
+	if (ptsd && res)
+		ft_printf("rb\n");
+}
+
+void	rr(t_stack **stack_a, t_stack **stack_b, int ptsd)
+{
+	int	ra_done;
+	int	rb_done;
+
+	ra_done = rotate_man(stack_a);
+	rb_done = rotate_man(stack_b);
+	if (ptsd && (ra_done || rb_done))
+		ft_printf("rr\n");
 }

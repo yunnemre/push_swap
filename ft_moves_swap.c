@@ -6,18 +6,20 @@
 /*   By: ydinler <ydinler@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/20 20:50:07 by ydinler           #+#    #+#             */
-/*   Updated: 2025/08/21 21:24:55 by ydinler          ###   ########.fr       */
+/*   Updated: 2025/08/25 18:30:47 by ydinler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "libft/libft.h"
+// int olrak mı donus yapıalcıgnı veya void olark mı 
+//donus yapılcagını agoritamya gore digsitircem unutma
 
 int	swap_man(t_stack *stack)
 {
 	int	tmp_v;
 	int	tmp_i;
-	
+
 	if (stack && stack->next)
 	{
 		tmp_v = stack->value;
@@ -31,38 +33,31 @@ int	swap_man(t_stack *stack)
 	return (0);
 }
 
-int	sa(t_stack *stack_a, int ptsd)
+void	sa(t_stack *stack_a, int ptsd)
 {
 	int	res;
-	
+
 	res = swap_man(stack_a);
 	if (ptsd && res)
-            ft_printf("sa\n");
-	if (res)
-		return(1);
-	return (0);
+		ft_printf("sa\n");
 }
 
-int	sb(t_stack *stack_b, int ptsd)
+void	sb(t_stack *stack_b, int ptsd)
 {
 	int	res;
 
 	res = swap_man(stack_b);
 	if (ptsd && res)
-            ft_printf("sb\n");
-	if (res)
-		return(1);
-	return (0);
-	
+		ft_printf("sb\n");
 }
 
 void	ss(t_stack *stack_a, t_stack *stack_b, int ptsd)
 {
-	int sa_done;
-	int sb_done;
-	
+	int	sa_done;
+	int	sb_done;
+
 	sa_done = swap_man(stack_a);
 	sb_done = swap_man(stack_b);
-    if (ptsd && (sa_done || sb_done))
-            ft_printf("ss\n");
+	if (ptsd && (sa_done || sb_done))
+		ft_printf("ss\n");
 }

@@ -10,6 +10,12 @@ SRCS    = main.c \
 		  ft_atoi_v2.c \
 		  ft_moves_push.c \
 		  ft_moves_swap.c \
+		  ft_moves_rotate.c \
+		  ft_moves_rev_rotate.c \
+		  ft_is_sorted.c \
+		  ft_bubble.c \
+		  ft_radix.c \
+
 
 OBJS    = $(SRCS:.c=.o)
 

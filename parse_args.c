@@ -6,7 +6,7 @@
 /*   By: ydinler <ydinler@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/18 14:49:59 by ydinler           #+#    #+#             */
-/*   Updated: 2025/08/22 21:53:03 by ydinler          ###   ########.fr       */
+/*   Updated: 2025/08/27 17:11:00 by ydinler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	ft_create_stack(char **res, t_stack **a)
 			return (1);
 		if (ft_dup_checks(*a, ss))
 			return (1);
-		new = ft_stack_new(ss, ft_stack_last(*a));
+		new = ft_stack_new(ss);
 		if (!new)
 			return (1);
 		ft_stack_add_back(a, new);

@@ -12,8 +12,6 @@ SRCS    = main.c \
 		  ft_moves_swap.c \
 		  ft_moves_rotate.c \
 		  ft_moves_rev_rotate.c \
-		  ft_is_sorted.c \
-		  ft_bubble.c \
 		  ft_radix.c \
 
 

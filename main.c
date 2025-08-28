@@ -6,36 +6,102 @@
 /*   By: ydinler <ydinler@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/18 14:50:24 by ydinler           #+#    #+#             */
-/*   Updated: 2025/08/26 22:15:18 by ydinler          ###   ########.fr       */
+/*   Updated: 2025/08/28 18:07:40 by ydinler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/libft.h"
 #include "push_swap.h"
-// https://medium.com/@ayogun/push-swap-c1f5d2d41e97
-// https://www.youtube.com/watch?v=wRvipSG4Mmk
-// https://medium.com/@ulysse.gks/push-swap-in
-//-less-than-4200-operations-c292f034f6c0
-// https://www.youtube.com/watch?v=OaG81sDEpVk
 
-int	push_swap(t_stack **stack_a, t_stack **stack_b)
+int	ft_is_sorted(t_stack *stack)
+{
+	while (stack->next)
+	{
+		if (!(stack->value < stack->next->value))
+			return (0);
+		stack = stack->next;
+	}
+	return (1);
+}
+
+void	sort_three(t_stack **stack_a)
+{
+	int	a;
+	int	b;
+	int	c;
+
+	a = (*stack_a)->value;
+	b = (*stack_a)->next->value;
+	c = ft_stack_last(*stack_a)->value;
+	if (a > b && b < c && a < c)
+		sa(*stack_a, 1);
+	else if (a > b && b > c)
+	{
+		sa(*stack_a, 1);
+		rra(stack_a, 1);
+	}
+	else if (a > b && b < c && a > c)
+		ra(stack_a, 1);
+	else if (a < b && b > c && a < c)
+	{
+		sa(*stack_a, 1);
+		ra(stack_a, 1);
+	}
+	else if (a < b && b > c && a > c)
+		rra(stack_a, 1);
+}
+
+void	push_min_b(t_stack **stack_a, t_stack **stack_b)
+{
+	int	min;
+	t_stack	*tmp;
+
+	while (ft_stack_size(*stack_a) > 3)
+	{
+		tmp = *stack_a;
+		min = tmp->value;
+		while (tmp)
+		{
+			if (min > tmp->value)
+				min = tmp->value;
+			tmp = tmp->next;
+		}
+		while ((*stack_a)->value != min)
+			ra(stack_a, 1);
+		pb(stack_a, stack_b);
+	}
+	sort_three(stack_a);
+	while (*stack_b)
+		pa(stack_a,stack_b);
+}
+
+void	push_swap(t_stack **stack_a, t_stack **stack_b)
 {
 	int		size;
-
-	size = ft_stack_size(*stack_a);
-	(void)stack_b;
-	if (size == 1)
-		return (1);
 	
-	return (0);
+	if (ft_is_sorted(*stack_a))
+		return ;
+	size = ft_stack_size(*stack_a);
+	if (size == 1)
+		return ;
+	else if (size == 2)
+	{
+		sa(*stack_a, 1);
+		return ;
+	}
+	else if (size == 3)
+		sort_three(stack_a);	
+	else if (size <= 5)
+		push_min_b(stack_a,stack_b);
+	else
+		ft_radix(stack_a,stack_b);
+	
 }
 
 int	main(int argc, char **argv)
 {
 	t_stack	*stack_a;
 	t_stack	*stack_b;
-	t_stack	*tmp;
-	int		is_sort;
 
 	stack_a = NULL;
 	stack_b = NULL;
@@ -44,41 +110,9 @@ int	main(int argc, char **argv)
 	else if (argc >= 2)
 		parse_args(argc, argv, &stack_a);
 	assign_index(stack_a);
+	push_swap(&stack_a,&stack_b);
 	
-	
-	// while (!is_sort)
-	// {
-	// 	is_sort=ft_is_sorted(stack_a);
-		
-	// }
-	ft_radix(&stack_a, &stack_b);
-	is_sort = ft_is_sorted(stack_a);
-	if (is_sort)
-	{
-		printf("sort olmus diyor");
-	}
-	else
-		printf("sort oolmamıs diyor");
-	tmp = stack_a;
-	// while (stack_a)
-	// {
-	// 	printf("STACK AA: index:%d , value : %d \n",
-	// 		stack_a->index, stack_a->value);
-	// 	stack_a = stack_a->next;
-	// }
-	ft_stack_clear(&tmp);
+	ft_stack_clear(&stack_a);
 	ft_stack_clear(&stack_b);
 	return (0);
 }
-
-// while (stack_a)
-	// {
-	// 	printf("STACK AA: index:%d , value : %d \n",
-	// 		stack_a->index, stack_a->value);
-	// 	stack_a = stack_a->next;
-	// }
-// if (stack_a->prev)
-// 		{
-// 			printf("##STACK AA: index:%d , value : %d \n",
-// 				stack_a->prev->index, stack_a->prev->value);
-//}

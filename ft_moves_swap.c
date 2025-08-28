@@ -6,14 +6,12 @@
 /*   By: ydinler <ydinler@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/20 20:50:07 by ydinler           #+#    #+#             */
-/*   Updated: 2025/08/25 18:30:47 by ydinler          ###   ########.fr       */
+/*   Updated: 2025/08/28 17:48:17 by ydinler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "libft/libft.h"
-// int olrak mı donus yapıalcıgnı veya void olark mı 
-//donus yapılcagını agoritamya gore digsitircem unutma
 
 int	swap_man(t_stack *stack)
 {

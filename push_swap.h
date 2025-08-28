@@ -6,7 +6,7 @@
 /*   By: ydinler <ydinler@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/18 14:50:19 by ydinler           #+#    #+#             */
-/*   Updated: 2025/08/26 20:02:15 by ydinler          ###   ########.fr       */
+/*   Updated: 2025/08/28 18:07:51 by ydinler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include <stdlib.h>
 # include <unistd.h>
-# include <stdio.h>
 # define INT_MAX 2147483647
 # define INT_MIN -2147483648
 
@@ -28,21 +27,31 @@ typedef struct s_stack
 }	t_stack;
 
 /*STACK*/
-t_stack	*ft_stack_new(int value, t_stack *prev);
+t_stack	*ft_stack_new(int value);
 void	ft_stack_add_back(t_stack **lst, t_stack *new);
 void	ft_stack_add_front(t_stack **lst, t_stack *new);
-void	ft_stack_clear(t_stack **stack);
-void	parse_args(int argc, char **argv, t_stack **a);
 t_stack	*ft_stack_last(t_stack *stc);
-void	ft_del_res(char **res);
+void	ft_stack_clear(t_stack **stack);
+
+/*Parse*/
+int		ft_dup_checks(t_stack *stack_a, int value);
 int		ft_create_stack(char **res, t_stack **a);
-void	assign_index(t_stack *stack_a);
-void	ft_bubble_sort(int *arr, int arry_size);
+void	ft_del_res(char **res);
+void	parse_args(int argc, char **argv, t_stack **a);
+
+
+/*Assign İndex*/
 int		ft_stack_size(t_stack *stack);
 void	swap(int *arr, int i, int j);
+void	ft_bubble_sort(int *arr, int arry_size);
+void	assign_index(t_stack *stack_a);
+
+
+/*Atoi*/
 int		ft_atoi_v2(const char *nptr, int *out);
+/*Error Man*/
 void	ft_error_man(t_stack **stack_a, t_stack **stack_b);
-int		ft_dup_checks(t_stack *stack_a, int value);
+
 
 /*MOVES*/
 int		swap_man(t_stack *stack);
@@ -63,12 +72,13 @@ void	rra(t_stack **stack_a, int ptsd);
 void	rrb(t_stack **stack_b, int ptsd);
 void	rrr(t_stack **stack_a, t_stack **stack_b, int ptsd);
 
+/*Main*/
 int		ft_is_sorted(t_stack *stack);
+void	sort_three(t_stack **stack_a);
+void	push_min_b(t_stack **stack_a, t_stack **stack_b);
+void	push_swap(t_stack **stack_a, t_stack **stack_b);
 
-void	ft_bubble(t_stack **stack_a, t_stack **stack_b, int raunt);
-void	ft_check_bigger(t_stack **stack_a, t_stack **stack_b);
-void	ft_sort_b(t_stack **stack_b);
-
+/*Radix*/
 int		check_bit(int	value, int raunt);
 void	ft_return_b(t_stack **stack_a, t_stack **stack_b);
 void	ft_radix(t_stack **stack_a, t_stack **stack_b);

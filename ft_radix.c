@@ -6,7 +6,7 @@
 /*   By: ydinler <ydinler@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/25 16:45:36 by ydinler           #+#    #+#             */
-/*   Updated: 2025/08/26 22:08:34 by ydinler          ###   ########.fr       */
+/*   Updated: 2025/08/28 15:55:48 by ydinler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	ft_radix(t_stack **stack_a, t_stack **stack_b)
 			if (check_bit((*stack_a)->index, round))
 				ra(stack_a, 1);
 			else
-				pb(stack_a, stack_b);
+				pb(stack_a,stack_b);
 		}
 		ft_return_b(stack_a, stack_b);
 		if (ft_is_sorted(*stack_a))

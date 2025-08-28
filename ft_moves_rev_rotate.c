@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_moves_rev_rotate.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ydinler <ydinler@student.42istanbul.c      +#+  +:+       +#+        */
+/*   By: ydinler <ydinler@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/22 09:42:09 by ydinler           #+#    #+#             */
-/*   Updated: 2025/08/22 09:42:09 by ydinler          ###   ########.fr       */
+/*   Updated: 2025/08/28 17:47:43 by ydinler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "push_swap.h"
 #include "libft/libft.h"
 

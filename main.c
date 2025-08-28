@@ -6,7 +6,7 @@
 /*   By: ydinler <ydinler@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/18 14:50:24 by ydinler           #+#    #+#             */
-/*   Updated: 2025/08/28 18:07:40 by ydinler          ###   ########.fr       */
+/*   Updated: 2025/08/28 18:20:44 by ydinler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,8 @@ void	sort_three(t_stack **stack_a)
 
 void	push_min_b(t_stack **stack_a, t_stack **stack_b)
 {
-	int	min;
 	t_stack	*tmp;
+	int		min;
 
 	while (ft_stack_size(*stack_a) > 3)
 	{
@@ -72,13 +72,13 @@ void	push_min_b(t_stack **stack_a, t_stack **stack_b)
 	}
 	sort_three(stack_a);
 	while (*stack_b)
-		pa(stack_a,stack_b);
+		pa(stack_a, stack_b);
 }
 
 void	push_swap(t_stack **stack_a, t_stack **stack_b)
 {
 	int		size;
-	
+
 	if (ft_is_sorted(*stack_a))
 		return ;
 	size = ft_stack_size(*stack_a);
@@ -90,12 +90,11 @@ void	push_swap(t_stack **stack_a, t_stack **stack_b)
 		return ;
 	}
 	else if (size == 3)
-		sort_three(stack_a);	
+		sort_three(stack_a);
 	else if (size <= 5)
-		push_min_b(stack_a,stack_b);
+		push_min_b(stack_a, stack_b);
 	else
-		ft_radix(stack_a,stack_b);
-	
+		ft_radix(stack_a, stack_b);
 }
 
 int	main(int argc, char **argv)
@@ -110,8 +109,7 @@ int	main(int argc, char **argv)
 	else if (argc >= 2)
 		parse_args(argc, argv, &stack_a);
 	assign_index(stack_a);
-	push_swap(&stack_a,&stack_b);
-	
+	push_swap(&stack_a, &stack_b);
 	ft_stack_clear(&stack_a);
 	ft_stack_clear(&stack_b);
 	return (0);

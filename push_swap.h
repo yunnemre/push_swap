@@ -6,7 +6,7 @@
 /*   By: ydinler <ydinler@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/18 14:50:19 by ydinler           #+#    #+#             */
-/*   Updated: 2025/08/28 18:07:51 by ydinler          ###   ########.fr       */
+/*   Updated: 2025/08/28 18:21:51 by ydinler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,19 +39,17 @@ int		ft_create_stack(char **res, t_stack **a);
 void	ft_del_res(char **res);
 void	parse_args(int argc, char **argv, t_stack **a);
 
-
 /*Assign İndex*/
 int		ft_stack_size(t_stack *stack);
 void	swap(int *arr, int i, int j);
 void	ft_bubble_sort(int *arr, int arry_size);
 void	assign_index(t_stack *stack_a);
 
-
 /*Atoi*/
 int		ft_atoi_v2(const char *nptr, int *out);
+
 /*Error Man*/
 void	ft_error_man(t_stack **stack_a, t_stack **stack_b);
-
 
 /*MOVES*/
 int		swap_man(t_stack *stack);
@@ -79,7 +77,7 @@ void	push_min_b(t_stack **stack_a, t_stack **stack_b);
 void	push_swap(t_stack **stack_a, t_stack **stack_b);
 
 /*Radix*/
-int		check_bit(int	value, int raunt);
+int		check_bit(int value, int raunt);
 void	ft_return_b(t_stack **stack_a, t_stack **stack_b);
 void	ft_radix(t_stack **stack_a, t_stack **stack_b);
 #endif
